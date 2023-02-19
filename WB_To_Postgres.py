@@ -30,7 +30,8 @@ for id in df:
     df = df.rename_axis('Country').reset_index()
     df = pd.melt(df, id_vars=['Country', ], var_name='Year', value_name=series_name)
 
-    # Define a new class for our database table with the same name as the data series. Source tutorial had name of the class Book because it was for a library. Feel free to use whatever name you want.
+    # Define a new class for our database table with the same name as the data series.
+    # Source tutorial had the name of the class Book because it was for a library. Feel free to use whatever name you want.
     class Book(Base):
         __tablename__ = series_name
         id = Column(Integer, primary_key=True)
